@@ -18,12 +18,14 @@
 **/
 package ritdb.stdf4j;
 
+import java.text.ParseException;
+
 public interface RecordVisitor {
   public void beforeFile();
 
   public void afterFile();
 
-  public void handleRecord(Record record);
+  public void handleRecord(Record record)  throws ParseException;
   
-  public void handleUnknownRecord(Header header, byte[] bytes);
+  public void handleUnknownRecord(Header header, byte[] bytes) throws ParseException;
 }
